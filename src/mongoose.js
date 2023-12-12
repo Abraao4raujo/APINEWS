@@ -11,9 +11,7 @@ const eNews = mongoose.model("eNews", {
 
 const connectToMongoDB = async () => {
   try {
-    mongoose.connect(
-      `mongodb+srv://abraao:${process.env.SECRET_KEY}@enews.32kfydx.mongodb.net/?retryWrites=true&w=majority`
-    );
+    mongoose.connect(`${DATABASE_URL}`);
   } catch (error) {
     console.log("Error connecting to MongoDB: ", error);
   }
