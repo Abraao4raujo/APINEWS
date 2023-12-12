@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #formulario {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/sendNews" method="post" id="formulario">
+      <label>title:</label>
+      <input type="text" name="title" id="titulo" required />
+
+      <label>description:</label>
+      <input type="text" name="description" id="description" required />
+
+      <label>img_url:</label>
+      <input type="text" name="img_url" id="img_url" required />
+
+      <label>auth:</label>
+      <input type="text" name="auth" id="auth" required />
+
+      <button type="submit" class="btnEnviar">Enviar</button>
+    </form>
+  </body>
+</html>
