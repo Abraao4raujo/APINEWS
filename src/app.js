@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const app = express();
-const PORT = 8081;
 const hora = new Date();
 
 const path = require("path");
@@ -52,9 +52,9 @@ app.post("/sendNews", async (req, res) => {
   news.save().then(() => res.send(news));
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   mongoose.connect(
-    "mongodb+srv://abraao:DaSqmNQQNg9Kuxsz@enews.32kfydx.mongodb.net/?retryWrites=true&w=majority"
+    `mongodb+srv://abraao:${process.env.SECRET_KEY}@enews.32kfydx.mongodb.net/?retryWrites=true&w=majority`
   );
-  console.log("server running at port: ", PORT);
+  console.log("Server is running")
 });
