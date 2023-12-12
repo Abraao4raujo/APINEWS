@@ -11,7 +11,7 @@ const eNews = mongoose.model("eNews", {
 
 const connectToMongoDB = async () => {
   try {
-    mongoose.connect(`${DATABASE_URL}`);
+    mongoose.connect(`${process.env.DATABASE_URL}`);
   } catch (error) {
     console.log("Error connecting to MongoDB: ", error);
   }
